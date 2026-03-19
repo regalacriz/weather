@@ -28,6 +28,7 @@ class Weather {
                 str.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
 
             const today = new Date();
+            const hours = today.getHours();
 
             const formatDate = (date) => {
                 const options = { weekday: 'long', month: 'long', day: 'numeric' };
@@ -58,6 +59,12 @@ class Weather {
             $('.humidity').text(`${humidity}%`); // Humidity
             $('.source').text(ucwords(source)); // Source
             $('.humidity_desc').text(ucwords(classification)); // Classification
+
+
+            const time_of_day = (hours >= 18 || hours < 6) ? 'night'    : 
+                                (hours >= 6 && hours < 12) ? 'morning'  : 'afternoon';
+
+            $('body').addClass(time_of_day);
 
         } catch (error) {
             console.error('Error fetching weather:', error);

@@ -76,7 +76,7 @@
                                     class="bi bi-wind me-2"></i><span class="text-uppercase">humidity</span></div>
                             <div class="container-body humidity"></div>
                             <div class="container-footer">
-                                <p>The dew point is currently <span class="humidity_desc"></span></p>
+                                <p>The dew point is <span class="humidity_desc"></span></p>
                             </div>
                         </div>
                     </div>
