@@ -35,7 +35,7 @@ class WeatherController extends Controller
                 $base_url = env('OPENWEATHERMAP_URL');
                 $apiKey  = env('OPENWEATHERMAP_KEY');
 
-                $response = Http::get("{$base_url}/weather", [
+                $response = Http::withoutVerifying()->get("{$base_url}/weather", [
                     'q'     => $query,
                     'appid' => $apiKey,
                     'units' => 'metric',
